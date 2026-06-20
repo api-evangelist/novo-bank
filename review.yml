@@ -1,0 +1,95 @@
+aid: novo-bank
+name: Novo
+review:
+  question: Does Novo expose a documented public developer API (e.g. Novo Connect), webhooks, or a developer portal?
+  answer: false
+  date: '2026-06-20'
+  reviewer: API Evangelist
+  asyncapiSpecCreated: false
+  asyncapiScopeNote: |
+    No AsyncAPI document was created. Novo does not publish any documented
+    streaming, event, or webhook surface (no public webhooks, no SSE, no
+    WebSocket) for third-party developers, so there is nothing in scope for
+    AsyncAPI modeling. If Novo publishes developer webhooks in the future,
+    revisit and model them accurately at that time.
+findings:
+  summary: |
+    Novo (novo.co) is a U.S. business banking platform for small businesses and
+    freelancers; banking services are provided by Middlesex Federal Savings,
+    F.A. As of this review, Novo does NOT operate a public, self-service
+    developer API, a developer portal (no developer.novo.co or equivalent was
+    found), or public webhooks. No "Novo Connect" public developer API is
+    documented. Programmatic access to Novo account, balance, and transaction
+    data is obtained through bank-data aggregators - primarily Plaid, which
+    lists Novo with the Assets, Auth, and Balance products. Novo's
+    "integrations" are productized, in-app connections to business tools
+    (Stripe, Shopify, Square, Amazon, Etsy, eBay, Wise, QuickBooks, Xero,
+    Slack, DocuSign), configured by the account holder rather than exposed as a
+    developer API. No first-party Novo endpoints could be confirmed, so the
+    OpenAPI document declares an empty paths object and no endpoints were
+    fabricated.
+  disambiguation: |
+    This profile is for Novo the SMB business bank (banknovo / novo.co). It is
+    distinct from three similarly named entities, some already represented in
+    the catalog as separate companies:
+    - Novo Nordisk - global pharmaceutical company (unrelated).
+    - NovoPayment - Latin American banking-as-a-service provider with a real
+      developer hub at developer.novopayment.com (different company).
+    - Novo Banco - Portuguese bank with open-banking APIs at api.novobanco.es
+      (different company).
+  apiAvailability:
+    firstPartyPublicApi: false
+    developerPortal: false
+    webhooks: false
+    aggregatorAccess: true
+    aggregators:
+      - name: Plaid
+        products:
+          - Assets
+          - Auth
+          - Balance
+        url: https://plaid.com/institutions/novo/
+  transports:
+    - protocol: REST
+      scheme: https
+      documented: false
+      note: No documented first-party Novo REST API base URL or endpoints.
+    - protocol: Webhooks
+      scheme: https
+      documented: false
+      note: No public developer webhooks are documented by Novo.
+    - protocol: SSE
+      scheme: https
+      documented: false
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+  endpointsConfirmedRest: []
+sources:
+  - url: https://www.novo.co/
+    type: Website
+    note: Company/product site. Describes free business checking, invoicing, reserves, bookkeeping, card, and funding. No developer API referenced.
+  - url: https://www.novo.co/integrations
+    type: Documentation
+    note: Lists productized integrations (Stripe, Shopify, Square, QuickBooks, Xero, Wise, etc.) configured in-app, not a developer API.
+  - url: https://plaid.com/institutions/novo/
+    type: APIReference
+    note: Novo is reachable via the Plaid aggregator with Assets, Auth, and Balance products.
+  - url: https://www.openbankingtracker.com/provider/banknovo
+    type: Documentation
+    note: States Novo has no listed API products and is accessed through aggregators like Plaid.
+actions:
+  openapiPath: openapi/novo-bank-openapi.yml
+  openapiPathsEmpty: true
+  asyncapiPath: null
+  apisYmlUpdated: true
+  reason: |
+    Because no public Novo API or webhook surface is documented, the OpenAPI
+    file uses an empty paths object with an accurate description, no AsyncAPI
+    document was created, and the four apis.yml entries (Accounts,
+    Transactions, Payments, Integrations) are modeled as product surfaces with
+    notes that they are not documented first-party endpoints. No endpoints were
+    fabricated.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

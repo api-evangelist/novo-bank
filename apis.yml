@@ -1,0 +1,112 @@
+aid: novo-bank
+url: https://raw.githubusercontent.com/api-evangelist/novo-bank/refs/heads/main/apis.yml
+name: Novo
+kind: company
+description: Novo is a U.S. business banking platform built for small businesses,
+  freelancers, and self-employed professionals, offering a free business checking
+  account, invoicing, reserves, AI-assisted bookkeeping, a business credit card, and
+  funding. Banking services are provided by Middlesex Federal Savings, F.A. Novo does
+  not publish a public self-service developer API; programmatic access to Novo
+  account data is currently delivered through third-party aggregators (Plaid), and
+  product integrations connect Novo accounts to tools like Stripe, Shopify,
+  QuickBooks, Xero, Wise, and Square.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Banking
+- Business Banking
+- Fintech
+- Small Business
+- Freelancers
+- Payments
+created: '2026-06-20'
+modified: '2026-06-20'
+specificationVersion: '0.19'
+apis:
+- aid: novo-bank:novo-accounts
+  name: Novo Accounts
+  tags:
+  - Accounts
+  - Balances
+  - Banking
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.novo.co/business-banking
+  properties:
+  - url: https://www.novo.co/business-banking
+    type: Documentation
+  - url: https://plaid.com/institutions/novo/
+    type: APIReference
+  - url: openapi/novo-bank-openapi.yml
+    type: OpenAPI
+  description: Novo business checking account data - account identity, balances, and
+    auth. Novo does not expose a public first-party Accounts API; account
+    connectivity is provided through the Plaid aggregator (Assets, Auth, Balance
+    products). Modeled here as a product surface, not a documented Novo endpoint.
+- aid: novo-bank:novo-transactions
+  name: Novo Transactions
+  tags:
+  - Transactions
+  - Statements
+  - Reconciliation
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.novo.co/business-banking
+  properties:
+  - url: https://www.novo.co/business-banking
+    type: Documentation
+  - url: https://plaid.com/institutions/novo/
+    type: APIReference
+  - url: openapi/novo-bank-openapi.yml
+    type: OpenAPI
+  description: Novo transaction history and categorization used for bookkeeping and
+    reconciliation. There is no documented public Novo Transactions API; transaction
+    data is accessed via aggregators such as Plaid, or synced into accounting tools
+    through Novo's productized integrations.
+- aid: novo-bank:novo-payments
+  name: Novo Payments
+  tags:
+  - Payments
+  - ACH
+  - Invoicing
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.novo.co/features/invoices
+  properties:
+  - url: https://www.novo.co/features/invoices
+    type: Documentation
+  - url: openapi/novo-bank-openapi.yml
+    type: OpenAPI
+  description: Novo money movement - invoicing, ACH transfers, and faster payouts
+    (Express ACH). These capabilities are delivered through the Novo app and partner
+    rails; no public payments API is documented for third-party developers. Modeled
+    as a product surface.
+- aid: novo-bank:novo-integrations
+  name: Novo Integrations
+  tags:
+  - Integrations
+  - Partners
+  - Accounting
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.novo.co/integrations
+  properties:
+  - url: https://www.novo.co/integrations
+    type: Documentation
+  - url: https://www.novo.co/features/stripe-integration
+    type: Documentation
+  description: Productized, prebuilt integrations that connect a Novo account to
+    business tools - Stripe, Shopify, Square, Amazon, Etsy, eBay, Wise, QuickBooks,
+    Xero, Slack, and DocuSign. These are configured in-app rather than via a public
+    developer API, so no OpenAPI is modeled for this surface.
+common:
+- type: LinkedIn
+  url: https://www.linkedin.com/company/banknovo
+- type: Website
+  url: https://www.novo.co/
+- type: Documentation
+  url: https://www.novo.co/integrations
+- type: Plans
+  url: plans/novo-bank-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/novo-bank-rate-limits.yml
+- type: FinOps
+  url: finops/novo-bank-finops.yml
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

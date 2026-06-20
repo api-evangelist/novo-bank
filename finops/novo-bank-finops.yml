@@ -1,0 +1,108 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
+provider: Novo
+providerId: novo-bank
+created: '2026-06-20'
+modified: '2026-06-20'
+reconciled: true
+tags:
+- Banking
+- Business Banking
+- Fintech
+- Small Business
+- Freelancers
+- FinOps
+- Cost Management
+- FOCUS
+description: >-
+  FinOps view of Novo. Novo business checking is free (no monthly fee, no
+  minimum balance), so there is no usage-metered API spend to manage - Novo
+  publishes no public developer API. Cost exposure comes from optional add-on
+  products and standard banking fees: Express ACH faster payouts, Novo Funding
+  cash advances (fixed-fee/factor), outgoing wires, insufficient-funds and
+  similar fee-schedule items, and any aggregator costs (e.g. Plaid) incurred by
+  a developer connecting to Novo data. Charges are modeled as Usage and
+  Purchase categories accordingly.
+notes: >-
+  Add-on and fee-schedule rates change; verify against Novo's pricing and fee
+  schedule during reconciliation. Banking services provided by Middlesex
+  Federal Savings, F.A. There is no first-party API meter because no public API
+  exists.
+sources:
+- https://www.novo.co/
+- https://www.novo.co/business-banking
+- https://focus.finops.org/focus-specification/v1-3/
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+publisherName: Novo
+serviceCategory: Financial Services
+billingModel:
+  pricingCategory: Free-with-Add-ons
+  billingFrequency: Monthly
+  billingCurrency: USD
+  chargeCategories:
+  - Usage
+  - Purchase
+  - Adjustment
+focusColumns:
+  ServiceName: Novo Business Banking
+  ServiceCategory: Financial Services
+  ProviderName: Novo
+  PublisherName: Novo
+  InvoiceIssuerName: Middlesex Federal Savings, F.A.
+  BillingCurrency: USD
+  ChargeCategory: Usage
+  PricingCategory: Free-with-Add-ons
+meters:
+- name: monthly_account_fee
+  description: Monthly business checking fee. Novo checking is free; this meter is $0.
+  unit: account
+  aggregation: sum
+  dimensions:
+  - account
+- name: express_ach_payouts
+  description: Faster ACH payouts billed per transfer when Express ACH is used.
+  unit: transfers
+  aggregation: sum
+  dimensions:
+  - account
+- name: funding_fees
+  description: Fixed fee/factor charged on Novo Funding cash advances, per advance.
+  unit: advances
+  aggregation: sum
+  dimensions:
+  - account
+- name: wire_and_schedule_fees
+  description: Outgoing wires, insufficient-funds, and other fee-schedule charges.
+  unit: events
+  aggregation: sum
+  dimensions:
+  - account
+  - fee_type
+- name: aggregator_data_access
+  description: >-
+    Third-party aggregator (e.g. Plaid) costs incurred by a developer
+    connecting to Novo account/transaction data. Billed by the aggregator, not
+    Novo.
+  unit: requests
+  aggregation: sum
+  dimensions:
+  - account
+  - aggregator
+principles:
+- name: Visibility
+  description: Review Novo statements and fee schedule; track add-on usage (Express ACH, Funding) and any aggregator costs separately.
+- name: Allocation
+  description: Tag transactions and reserves by project/client in Novo's bookkeeping; map fees to cost centers.
+- name: Optimization
+  description: Use standard (free) ACH instead of Express ACH when timing allows; weigh Funding fixed fees against need; avoid wire/NSF fees.
+- name: Accountability
+  description: Assign an owner to review the monthly fee and add-on spend against budget; reassess aggregator usage costs.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

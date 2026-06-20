@@ -1,0 +1,140 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Novo
+providerId: novo-bank
+created: '2026-06-20'
+modified: '2026-06-20'
+reconciled: true
+tags:
+- Banking
+- Business Banking
+- Fintech
+- Small Business
+- Freelancers
+- Plans
+description: >-
+  Novo business checking is free - no monthly fees, no minimum balance, and no
+  minimum opening deposit. Revenue comes from paid add-on products rather than
+  account fees or API metering. There is no public developer API and therefore
+  no API pricing tier; the entries below describe Novo's banking product plan
+  and its optional paid add-ons (Novo Funding cash advances, the Novo Business
+  Mastercard, and faster Express ACH payouts). Standard fee schedule items
+  (e.g. outgoing wires, insufficient-funds, foreign-transaction handling) apply
+  per Novo's published fee schedule.
+notes: >-
+  Add-on availability and rates change; verify against Novo's pricing and fee
+  schedule during reconciliation. Banking services provided by Middlesex
+  Federal Savings, F.A. No developer/API plan exists because Novo does not
+  publish a public API.
+sources:
+- https://www.novo.co/
+- https://www.novo.co/business-banking
+- https://www.novo.co/integrations
+plans:
+- id: novo-business-checking
+  name: Novo Business Checking
+  type: free
+  description: >-
+    Free business checking account for small businesses and freelancers with no
+    monthly fees, no minimum balance, and no minimum opening deposit. Includes
+    invoicing, reserves, bookkeeping/categorization, and prebuilt integrations.
+  entries:
+  - label: Monthly Account Fee
+    name: monthly_fee
+    type: flat
+    metric: account
+    limit: -1
+    timeFrame: month
+    geo: us
+    unit: 1
+    price: $0
+    userMultiplied: false
+  - label: Minimum Balance
+    name: minimum_balance
+    type: flat
+    metric: account
+    limit: -1
+    timeFrame: month
+    geo: us
+    unit: 1
+    price: $0
+    userMultiplied: false
+  - label: Standard ACH Transfer
+    name: ach_standard
+    type: flat
+    metric: transfer
+    limit: -1
+    timeFrame: usage
+    geo: us
+    unit: 1
+    price: $0
+    userMultiplied: false
+  elements:
+  - name: Business Checking
+  - name: Invoicing
+  - name: Reserves
+  - name: Bookkeeping
+  - name: Integrations
+- id: novo-express-ach
+  name: Express ACH
+  type: usage
+  description: >-
+    Optional faster ACH payout that accelerates settlement for an added fee.
+    Pricing is set by Novo and varies; confirm on the fee schedule.
+  entries:
+  - label: Express ACH Payout
+    name: express_ach
+    type: usage
+    metric: transfer
+    limit: -1
+    timeFrame: usage
+    geo: us
+    unit: 1
+    price: see Novo fee schedule
+    userMultiplied: false
+  elements:
+  - name: Faster Payouts
+- id: novo-funding
+  name: Novo Funding
+  type: usage
+  description: >-
+    Merchant cash advance / funding product for eligible Novo customers. Cost
+    is expressed as a fixed fee/factor on the advanced amount rather than a
+    traditional APR; eligibility and terms are determined per applicant.
+  entries:
+  - label: Cash Advance
+    name: cash_advance
+    type: usage
+    metric: advance
+    limit: -1
+    timeFrame: usage
+    geo: us
+    unit: 1
+    price: fixed fee per offer (eligibility-based)
+    userMultiplied: false
+  elements:
+  - name: Working Capital
+- id: novo-business-card
+  name: Novo Business Mastercard
+  type: free
+  description: >-
+    Business debit/charge card with expense tracking and rewards/perks. Issued
+    with the checking account; no annual card fee.
+  entries:
+  - label: Annual Card Fee
+    name: card_annual_fee
+    type: flat
+    metric: card
+    limit: -1
+    timeFrame: year
+    geo: us
+    unit: 1
+    price: $0
+    userMultiplied: false
+  elements:
+  - name: Business Card
+  - name: Expense Tracking
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

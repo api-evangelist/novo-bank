@@ -1,0 +1,61 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: Novo
+providerId: novo-bank
+created: '2026-06-20'
+modified: '2026-06-20'
+reconciled: false
+tags:
+- Banking
+- Business Banking
+- Fintech
+- Small Business
+- Freelancers
+- Rate Limiting
+- Quotas
+- Throttling
+description: >-
+  Novo does not publish a public developer API, so there is no first-party API
+  rate-limit policy to document. Any rate limiting that applies to programmatic
+  access to Novo account or transaction data is enforced by the third-party
+  aggregator used to reach Novo (e.g. Plaid), under that aggregator's own
+  limits and quotas, not by Novo. Banking product limits (e.g. ACH transfer
+  caps, daily card limits) are operational account controls rather than API
+  throttling and are set per account by Novo. No reconciled values are
+  available.
+notes: >-
+  If Novo introduces a public API in the future, replace this placeholder with
+  documented RPM/RPD/quota values. Until then, consult the aggregator (Plaid)
+  rate-limit documentation for the limits that actually govern Novo data access.
+sources:
+- https://www.novo.co/
+- https://plaid.com/institutions/novo/
+- https://plaid.com/docs/
+responseCodes:
+  throttled: 429
+limits:
+- name: First-Party API Rate Limit
+  scope: account
+  metric: requests
+  limit: not applicable
+  notes: Novo publishes no public API and therefore no first-party rate limit.
+- name: Aggregator Rate Limit (Plaid)
+  scope: account
+  metric: requests
+  limit: see aggregator documentation
+  notes: >-
+    Programmatic access to Novo data goes through aggregators such as Plaid;
+    request limits are governed by that aggregator, not Novo.
+policies:
+- name: Aggregator-Governed Access
+  description: >-
+    Because there is no Novo developer API, throttling and quota behavior are
+    determined by the data aggregator integration in use.
+- name: Backoff Strategy
+  description: >-
+    When integrating via an aggregator, implement exponential backoff with
+    jitter and honor Retry-After per the aggregator's guidance.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

@@ -1,0 +1,9 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Novo API",
+    "version": "0.0",
+    "description": "Novo (novo.co) is a U.S. business banking platform for small businesses and freelancers. Novo does not publish a public, self-service developer API, developer portal, or webhooks; account and transaction data is accessed through aggregators such as Plaid, and integrations are productized in-app connections. No first-party Novo endpoints are documented, so this collection intentionally contains no requests. No endpoints are fabricated."
+  },
+  "items": []
+}
