@@ -95,6 +95,10 @@ apis:
     Xero, Slack, and DocuSign. These are configured in-app rather than via a public
     developer API, so no OpenAPI is modeled for this surface.
 common:
+- type: TrustCenter
+  url: security/novo-bank-trust-center.yml
+- type: DomainSecurity
+  url: security/novo-bank-domain-security.yml
 - type: LinkedIn
   url: https://www.linkedin.com/company/banknovo
 - type: Website

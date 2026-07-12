@@ -1,0 +1,12 @@
+generated: '2026-07-11'
+method: searched
+probe: true
+source: https://trust.novo.co/
+url: https://trust.novo.co/
+certifications:
+- SOC 2
+evidence:
+- source: https://trust.novo.co/
+  keywords:
+  - soc 2
+  - trust center
