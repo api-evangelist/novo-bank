@@ -81,11 +81,6 @@ Novo money movement - invoicing, ACH transfers, and faster payouts (Express ACH)
 - [Postman Collection](collections/novo-bank.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
 - [Open Collection](collections/novo-bank.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
 
-### Novo Integrations
-
-Productized, prebuilt integrations that connect a Novo account to business tools - Stripe, Shopify, Square, Amazon, Etsy, eBay, Wise, QuickBooks, Xero, Slack, and DocuSign. These are configured in-app rather than via a public developer API, so no OpenAPI is modeled for this surface.
-
-- **Human URL:** [https://www.novo.co/integrations](https://www.novo.co/integrations)
 
 #### Tags
 
