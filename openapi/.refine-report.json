@@ -1,0 +1,14 @@
+{
+  "provider": "novo-bank",
+  "sources": [
+    "novo-bank-openapi.yml"
+  ],
+  "outputs": [],
+  "archived": [
+    "archived novo-bank-openapi.yml"
+  ],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
