@@ -30,6 +30,10 @@ apis:
   - aid: novo-bank:novo-accounts
     name: Novo Accounts
     tags:
+      - Account
+      - Balances
+      - Banking
+    tags_raw:
       - Accounts
       - Balances
       - Banking
@@ -46,6 +50,10 @@ apis:
   - aid: novo-bank:novo-transactions
     name: Novo Transactions
     tags:
+      - Transaction
+      - Statements
+      - Reconciliation
+    tags_raw:
       - Transactions
       - Statements
       - Reconciliation
