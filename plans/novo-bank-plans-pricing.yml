@@ -143,3 +143,47 @@ plans:
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - metered
+  - subscription
+  units:
+  - data
+  - object
+  plans:
+  - name: Novo Business Checking
+    access: free
+    model: subscription
+    model_how: derived
+    units:
+    - data
+    - object
+    periods:
+    - month
+    - per-use
+  - name: Express ACH
+    access: other
+    model: metered
+    model_how: stated
+    units:
+    - data
+    periods:
+    - per-use
+  - name: Novo Funding
+    access: other
+    model: metered
+    model_how: stated
+    units:
+    - other
+    periods:
+    - per-use
+  - name: Novo Business Mastercard
+    access: free
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - year
