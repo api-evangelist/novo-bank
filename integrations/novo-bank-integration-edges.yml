@@ -13,6 +13,7 @@ checked:
 - https://registry.financialdataexchange.org/
 - https://zapier.com/apps/novo-bank/integrations
 - https://zapier.com/apps/novo/integrations
+- slack/integrations/slack-integration-edges.yml
 - stripe/integrations/stripe-integration-edges.yml
 summary: null
 marketplace_apps: []
@@ -58,4 +59,21 @@ edges:
   detected: '2026-10-15'
   detected_by: mirror-platform-listings.py
   category: banking_services
+- partner_name: Slack (own)
+  partner: slack
+  partner_match: mirror
+  mirror_match: domain+product
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://slack.com/marketplace/AN02DB341-novo
+  mirror_of: slack/integrations/slack-integration-edges.yml
+  apps:
+  - Novo
+  listing_count: 1
+  detected: '2026-10-18'
+  detected_by: mirror-platform-listings.py
+  category: Slack app
 templates: []
