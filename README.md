@@ -1,4 +1,4 @@
-# Novo (novo-bank)
+# Novo
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,107 +66,110 @@
 
 Novo is a U.S. business banking platform built for small businesses, freelancers, and self-employed professionals, offering a free business checking account, invoicing, reserves, AI-assisted bookkeeping, a business credit card, and funding. Banking services are provided by Middlesex Federal Savings, F.A. Novo does not publish a public self-service developer API; programmatic access to Novo account data is currently delivered through third-party aggregators (Plaid), and product integrations connect Novo accounts to tools like Stripe, Shopify, QuickBooks, Xero, Wise, and Square.
 
-> Disambiguation: This profile covers **Novo** (banknovo / novo.co), the U.S. SMB business banking platform. It is **not** Novo Nordisk (pharmaceutical), **NovoPayment** (Latin American BaaS at developer.novopayment.com), or **Novo Banco** (Portuguese bank at api.novobanco.es) — all distinct companies.
+**Areas:** Banking · Business Banking · Fintech · Small Business · Freelancers · Payments
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/novo-bank/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/novo-bank/refs/heads/main/apis.yml)
+## Novo on APIs.io
 
-## Tags
+Everything profiled for Novo is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/novo-bank/](https://apis.io/providers/novo-bank/)** — or go straight to one of the APIs or properties below.
 
-- Banking
-- Business Banking
-- Fintech
-- Small Business
-- Freelancers
-- Payments
+### APIs (3)
 
-## Timestamps
+- [Novo Accounts](https://apis.io/apis/novo-bank/novo-accounts/) — Novo business checking account data - account identity, balances, and auth. Novo does not expose a public first-party Accounts API; account connectivity is…
+- [Novo Transactions](https://apis.io/apis/novo-bank/novo-transactions/) — Novo transaction history and categorization used for bookkeeping and reconciliation. There is no documented public Novo Transactions API; transaction data…
+- [Novo Payments](https://apis.io/apis/novo-bank/novo-payments/) — Novo money movement - invoicing, ACH transfers, and faster payouts (Express ACH). These capabilities are delivered through the Novo app and partner rails;…
 
-- **Created:** 2026-06-20
-- **Modified:** 2026-06-20
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### Novo Accounts
+#### Collections (1)
 
-Novo business checking account data - account identity, balances, and auth. Novo does not expose a public first-party Accounts API; account connectivity is provided through the Plaid aggregator (Assets, Auth, Balance products). Modeled here as a product surface, not a documented Novo endpoint.
+Postman and Open Collection request collections.
 
-- **Human URL:** [https://www.novo.co/business-banking](https://www.novo.co/business-banking)
+- [Novo API](https://apis.io/collections/novo-bank/open-novo-bank/)
 
-#### Tags
+#### Security (2)
 
-- Accounts
-- Balances
-- Banking
+Authentication, trust centre, and vulnerability disclosure.
 
-#### Properties
+- [Novo Bank Domain Security](https://apis.io/security/novo-bank/novo-bank-domain-security/)
+- [Novo Bank Trust Center](https://apis.io/security/novo-bank/novo-bank-trust-center/)
 
-- [Documentation](https://www.novo.co/business-banking)
-- [API Reference](https://plaid.com/institutions/novo/)
-- [OpenAPI](openapi/novo-bank-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/novo-bank.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/novo-bank.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### Plans and pricing (1)
 
-### Novo Transactions
+Published plans, tiers and prices.
 
-Novo transaction history and categorization used for bookkeeping and reconciliation. There is no documented public Novo Transactions API; transaction data is accessed via aggregators such as Plaid, or synced into accounting tools through Novo's productized integrations.
+- [Novo Bank Plans Pricing](https://apis.io/plans/novo-bank/novo-bank-plans-pricing/)
 
-- **Human URL:** [https://www.novo.co/business-banking](https://www.novo.co/business-banking)
+#### Rate limits (1)
 
-#### Tags
+Published request limits.
 
-- Transactions
-- Statements
-- Reconciliation
+- [Novo Bank Rate Limits](https://apis.io/rate-limits/novo-bank/novo-bank-rate-limits/)
 
-#### Properties
+#### FinOps (1)
 
-- [Documentation](https://www.novo.co/business-banking)
-- [API Reference](https://plaid.com/institutions/novo/)
-- [OpenAPI](openapi/novo-bank-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/novo-bank.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/novo-bank.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+What the API costs to run, by operation.
 
-### Novo Payments
+- [Novo Bank Finops](https://apis.io/finops/novo-bank/novo-bank-finops/)
 
-Novo money movement - invoicing, ACH transfers, and faster payouts (Express ACH). These capabilities are delivered through the Novo app and partner rails; no public payments API is documented for third-party developers. Modeled as a product surface.
+## Where to find this API
 
-- **Human URL:** [https://www.novo.co/features/invoices](https://www.novo.co/features/invoices)
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-#### Tags
-
-- Payments
-- ACH
-- Invoicing
-
-#### Properties
-
-- [Documentation](https://www.novo.co/features/invoices)
-- [OpenAPI](openapi/novo-bank-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/novo-bank.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/novo-bank.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-
-#### Tags
-
-- Integrations
-- Partners
-- Accounting
-
-#### Properties
-
-- [Documentation](https://www.novo.co/integrations)
-- [Documentation](https://www.novo.co/features/stripe-integration)
-
-## Common Properties
-
-- [LinkedIn](https://www.linkedin.com/company/banknovo)
 - [Website](https://www.novo.co/)
 - [Documentation](https://www.novo.co/integrations)
-- [Plans](plans/novo-bank-plans-pricing.yml)
-- [Rate Limits](rate-limits/novo-bank-rate-limits.yml)
-- [Fin Ops](finops/novo-bank-finops.yml)
+- [Blog](https://novo.co/learn)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 17.9** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 25.1 |
+| Contract governance | 0.0 |
+| Operational transparency | 5.3 |
+| Developer ergonomics | 19.0 |
+| Access clarity | 15.8 |
+
+**Agent readiness 13.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 8.7** — Banking & Open Finance
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/novo-bank/](https://apis.io/providers/novo-bank/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Novo: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/novo-bank/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
